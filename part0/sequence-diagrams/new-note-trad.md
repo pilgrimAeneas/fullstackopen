@@ -5,8 +5,10 @@ sequenceDiagram
 
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note, {note:content}
     activate server
+    Note left of server: server stores the new note in notes array
     server-->>browser: 302 Found, Location: https://studies.cs.helsinki.fi/exampleapp/notes
     deactivate server
+
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
