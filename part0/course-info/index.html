@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1>My main title</h1>
+    <!-- <h1>My main title</h1>
 
     <h2>My top level heading</h2>
     <h3>My subheading</h3>
@@ -38,7 +38,26 @@
         <li>Repeat</li>
     </ul>
 
-    <a href="https://www.google.com">Hello!</a>
+    <a href="https://www.google.com">Hello!</a> -->
+
+    <form action="./my-handling-form-page" method="post">
+        <p>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="user_name" value="Default name">
+        </p>
+        <p>
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" name="user_email" value="Default email">
+        </p>
+        <p>
+            <label for="msg">Message:</label>
+            <textarea id="msg" name="user_message">Default message</textarea>
+        </p>
+        <p>
+            <button class="button" type="submit">Submit</button>
+        </p>
+    </form>
+
 </body>
 
 </html>
