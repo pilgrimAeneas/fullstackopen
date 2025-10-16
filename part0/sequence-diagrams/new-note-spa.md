@@ -8,6 +8,7 @@ sequenceDiagram
 
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa, the new note with its date
     activate server
+    Note left of server: server stores the new note in notes array
     server-->>browser: 201 Created
     deactivate server
 ```
