@@ -52,8 +52,9 @@ const Part = (props) => {
 const Total = (props) => {
   return (
     <p>
-      Number of exercises
-      {props.course.parts.reduce((acc, part) => (acc + part.exercises), 0)}
+      Number of exercises {
+        props.course.parts.reduce((acc, part) => (acc + part.exercises), 0)
+      }
     </p>
   )
 }
