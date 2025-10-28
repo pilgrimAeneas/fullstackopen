@@ -29,31 +29,31 @@ const App = () => {
   )
 }
 
-const Header = (props) => {
+const Header = ({ course }) => {
   return (
-    <h1>{props.course.name}</h1>
+    <h1>{course.name}</h1>
   )
 }
 
-const Content = (props) => {
+const Content = ({ course }) => {
   return (
     <>
-      {props.course.parts.map((part, i) => (<Part key={i} part={part} />))}
+      {course.parts.map((part, i) => (<Part key={i} part={part} />))}
     </>
   )
 }
 
-const Part = (props) => {
+const Part = ({ part }) => {
   return (
-    <p>{props.part.name} {props.part.exercises}</p>
+    <p>{part.name} {part.exercises}</p>
   )
 }
 
-const Total = (props) => {
+const Total = ({ course }) => {
   return (
     <p>
       Number of exercises {
-        props.course.parts.reduce((acc, part) => (acc + part.exercises), 0)
+        course.parts.reduce((acc, part) => (acc + part.exercises), 0)
       }
     </p>
   )
