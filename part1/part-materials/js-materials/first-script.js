@@ -53,6 +53,8 @@ const object2 = {
 
 // Treat objects like Racket's structs!
 
+// In this course we use "this-less" JavaScript
+
 // Destructuring in objects: use the name of the key alone, or key:chose_identifier
 const { name, education: education1 } = object1
 const { age } = object1
@@ -83,8 +85,8 @@ const square3 = p => p * p
 
 const tSquared1 = t.map(p => p * p)
 const tSquared2 = t.map(square1)
-console.log(tSquared1)
-console.log(tSquared2)
+// console.log(tSquared1)
+// console.log(tSquared2)
 
 // Function declaration and function expressions are irrelevant to us.
 // Use only lambda expressions also known as arrow syntax, same with let and const.
@@ -96,3 +98,93 @@ const f1 = (v) => x1 + v
 
 x1 = 5
 // console.log(f1(1))
+// console.log(this)
+
+// This is because object environments which are passed to the closure when it's defined
+// are mutable objects, and mutating them anywhere is the same as mutating the original
+// object environment which was passed to the closure and potentially another closures.
+
+// env1 is passed to closure1
+// env1 is passed to closure2
+// return closures 1 and 2
+// now mutate variable in env1
+// both closures 1 and 2 will have the variable mutated in their environments
+// which are references to env1, an object.
+
+// This is how it works in my interpreter, in racket and scheme, and in JavaScript.
+
+// EXTRAS -------------------
+
+const obj1 = new Object();
+obj1.hello = "Hey there";
+
+const obj2 = Object.create(obj1);
+console.log(obj2.hello)
+console.log(Object.getPrototypeOf(obj2))
+
+const spider = {
+    web: "",
+    makeWeb() {
+        this.web += "web";
+        return this;
+    }
+}
+
+const spiderSon = Object.create(spider)
+spiderSon.web = "webwebalready"
+
+spiderSon.makeWeb().makeWeb().makeWeb().makeWeb()
+console.log(spiderSon.web)
+
+// strings are primitives and immutable.
+let s1 = "Hello";
+let s2 = s1;
+s1 = "Nope"
+console.log(s1)
+console.log(s2)
+// each is pointing to its own version. (not really, but it's immutable so it doesn't matter)
+
+// Objects on the other hand, are mutable and in heap so they work as expected from references.
+
+// Basically we have primitives that are stored in stack and are immutable.
+// Anything else, however, is an object that is in heap and is mutable and referenced.
+
+const spider1 = Object.create(spider) // inherit from spider
+const spider2 = Object.assign(spider) // clone the properties of spider (only enumerable)
+const spider3 = spider                // another reference to spider object
+
+// assign doesn't recursively deep copy, and doesn't copy inherited or non-internal properties
+// assign might generally be replace by a more preferable spread syntax. especially when
+// deep copying multiple objects into one.
+
+const spider4 = {
+    ...spider,
+    ...obj1,
+}
+
+console.log(spider4)
+
+// avoid (for-in) as it takes into consideration enumerable objects, not internal.
+// instead get the keys, values, or entries as a list then iterate on them with for-of.
+for (const [k, v] of Object.entries(spider4)) {
+    console.log(k, v)
+}
+
+// to create a constructor
+function Person(name) {
+    this.name = name;
+}
+
+// to use the constructor
+const p1 = new Person("Moon")
+console.log(p1)
+
+// Basically no matter how an object is created, it's a inherited object, from
+// either the global empty object, or any other. Then more properties can be defined for it.
+// To use class syntax or function Object1 and the new keyword, is to use syntactic sugar
+// for object creation including inheriting and extra properties definition.
+
+// The low level or basic level is Object.create('inherit from here')
+// Then assigning more properties as needed.
+
+// This can be done by literals, functions, constructors, or class syntax.

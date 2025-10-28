@@ -51,34 +51,60 @@ High-level Workings of the Web
 - Internet and Transmission Control Protocols (TCP/IP)
     - Define how data is routed and transmitted across the internet.
     - IP does the routing, and TCP controls the transmission.
-    - 
-- TODO: PACKETS
+- Packets:
+    - The form the data is in while traveling between client and server.
+    - Small chunks which each contains
+        - A header: server and client IP, packet number, total packets, and protocol details.
+        - A payload: the chunk of data being sent as packets.
+    - It is easier to re-send individual packets if the original is dropped or corrupted.
+    - It is more efficient to be able to route each packet individually to avoid slowing network.
 - Domain Name System (DNS)
+    - An application layer protocol.
     - The address book of websites, mapping web address to IP address.
     - The client needs the server IP address from the DNS, for routing.
 - HyperText Transfer Protocol (HTTP)
-    - HTTP is an application layer protocol.
-    - It defines interaction (request, response) between client and server.
-- TODO: REQUESTS and RESPONSES
+    - An application layer protocol.
+    - Language and process of interactions (request, response) between client and server.
+    - Requests
+        - POST: submit entity to the specified resource, often to change state on server.
+        - GET: request representation of the specified resource.
+        - PUT: replace target resource with request content.
+        - DELETE: delete the specified resource.
+    - Responses
+        - 200: successful request.
+        - 301: permanently moved to given location
+        - 400: server can't process request, bad format.
+        - 403: sever will not give access. knows who you are but no permission.
+        - 404; resource not found. wrong url.
+        - 503: problem with the server, can't handle request.
+- Files: A website is made up of many different files
+    - Code: HTML, CSS, and Scripts that web browsers render by parsing and evaluating.
+    - Assets: JSON, Images, music, video, Word documents, and PDFs.
 
 Uniform Resource Locator (URL)
-- TODO: Full URL
-- TODO: Protocol
-- TODO: Domain
-- TODO: Subdomain
-- TODO: Path
+- Defines the location of a unique resource on the internet.
+- https://developer.mozilla.org/en-US/docs/Learn_web_development/
+- Components
+    - Protocol or Scheme: here is https://, which is the protocol the browser uses to request.
+    - Authority
+        - Domain Name
+            - Top-level Domain: here is .org, top level location of the requested server.
+            - Second-level Domain: here is .mozilla., second level location of a requested server.
+            - Sub-domains: here is developer., a distinct content areas on the domain.
+        - Port: the operating system gate to a process on the connected to server.
+    - Path: the path to the resource being accessed.
+    - Parameters: to modify the request and by extension its response's behavior
+    - Anchor: browser location on the requested page.
 
 Simple Demo
 1. Type a web address or a full URL in the address bar and hit return.
 2. The browser checks with DNS for the IP address of the server hosting the website.
 3. The browser sends an HTTP GET request to the server for a copy of the website.
     - This message and all other data is transmitted across your internet connection under TCP/IP.
-    - The way data under TCP/IP is transmitted is as data packets.
+    - The way data under TCP/IP (Transport and Internet) is transmitted is as data packets.
 4. If the request is approved:
     - The server sends back a response with HTTP code "200 OK".
     - The response carries also the main index HTML, which might cause more GET requests.
 5. The browser revaluates and renders all the code files as it receives them.
-
-
 
 -->
