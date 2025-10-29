@@ -43,9 +43,9 @@ const Content = ({ course }) => {
   )
 }
 
-const Part = ({ part }) => {
+const Part = ({ part: { name, exercises } }) => {
   return (
-    <p>{part.name} {part.exercises}</p>
+    <p>{name} {exercises}</p>
   )
 }
 
