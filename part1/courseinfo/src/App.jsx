@@ -49,11 +49,11 @@ const Part = ({ part: { name, exercises } }) => {
   )
 }
 
-const Total = ({ course }) => {
+const Total = ({ course: { parts } }) => {
   return (
     <p>
       Number of exercises {
-        course.parts.reduce((acc, part) => (acc + part.exercises), 0)
+        parts.reduce((acc, part) => (acc + part.exercises), 0)
       }
     </p>
   )
