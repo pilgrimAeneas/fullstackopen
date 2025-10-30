@@ -77,7 +77,7 @@ const square1 = (p1) => {
 }
 
 const square2 = p => {
-    console.log(p)
+    // console.log(p)
     return p * p
 }
 
@@ -119,8 +119,8 @@ const obj1 = new Object();
 obj1.hello = "Hey there";
 
 const obj2 = Object.create(obj1);
-console.log(obj2.hello)
-console.log(Object.getPrototypeOf(obj2))
+// console.log(obj2.hello)
+// console.log(Object.getPrototypeOf(obj2))
 
 const spider = {
     web: "",
@@ -134,14 +134,14 @@ const spiderSon = Object.create(spider)
 spiderSon.web = "webwebalready"
 
 spiderSon.makeWeb().makeWeb().makeWeb().makeWeb()
-console.log(spiderSon.web)
+// console.log(spiderSon.web)
 
 // strings are primitives and immutable.
 let s1 = "Hello";
 let s2 = s1;
 s1 = "Nope"
-console.log(s1)
-console.log(s2)
+// console.log(s1)
+// console.log(s2)
 // each is pointing to its own version. (not really, but it's immutable so it doesn't matter)
 
 // Objects on the other hand, are mutable and in heap so they work as expected from references.
@@ -162,12 +162,12 @@ const spider4 = {
     ...obj1,
 }
 
-console.log(spider4)
+// console.log(spider4)
 
 // avoid (for-in) as it takes into consideration enumerable objects, not internal.
 // instead get the keys, values, or entries as a list then iterate on them with for-of.
 for (const [k, v] of Object.entries(spider4)) {
-    console.log(k, v)
+    // console.log(k, v)
 }
 
 // to create a constructor
@@ -177,7 +177,7 @@ function Person(name) {
 
 // to use the constructor
 const p1 = new Person("Moon")
-console.log(p1)
+// console.log(p1)
 
 // Basically no matter how an object is created, it's a inherited object, from
 // either the global empty object, or any other. Then more properties can be defined for it.
@@ -188,3 +188,17 @@ console.log(p1)
 // Then assigning more properties as needed.
 
 // This can be done by literals, functions, constructors, or class syntax.
+
+const car = {
+    speed: "fast",
+    color: "red",
+}
+
+const car2 = Object.create(car)
+console.log(car2.__proto__.color = "green")
+
+console.log(car)
+
+// all properties are either own or inherited, enumerable or non-enumerable.
+// for..in goes over all enumerable including inherited.
+// assign and spread show all own including non-enumerable.
