@@ -31,6 +31,8 @@ const FeedbackInterface = ({ onGood, onNeutral, onBad }) => {
   )
 }
 
+const Button = ({ text, onClick }) => <button onClick={onClick}>{text}</button>
+
 const Statistics = ({ good, neutral, bad }) => {
   const all = good + neutral + bad
   const points = (1 * good) + (0 * neutral) + (-1 * bad)
@@ -62,7 +64,6 @@ const Statistics = ({ good, neutral, bad }) => {
   }
 }
 
-const Button = ({ text, onClick }) => <button onClick={onClick}>{text}</button>
 const StatisticsLine = ({ text, value }) => <tr><td>{text}</td><td>{value}</td></tr>
 
 export default App
