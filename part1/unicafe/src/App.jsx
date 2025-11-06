@@ -31,18 +31,25 @@ const Statistics = ({ good, neutral, bad }) => {
   const points = (1 * good) + (0 * neutral) + (-1 * bad)
   const average = (points / all)
   const positiveRatio = good / all
+  if (all === 0) {
+    return (
+      <p>No feedback given.</p>
+    )
+  }
+  else {
+    return (
+      <>
+        <h2>Statistics</h2>
+        <Display value={good} text="good" />
+        <Display value={neutral} text="neutral" />
+        <Display value={bad} text="bad" />
+        <Display value={all} text="all" />
+        <Display value={average} text="average" />
+        <Display value={positiveRatio + ' %'} text="positive" />
+      </>
+    )
+  }
 
-  return (
-    <>
-      <h2>Statistics</h2>
-      <Display value={good} text="good" />
-      <Display value={neutral} text="neutral" />
-      <Display value={bad} text="bad" />
-      <Display value={all} text="all" />
-      <Display value={average} text="average" />
-      <Display value={positiveRatio + ' %'} text="positive" />
-    </>
-  )
 }
 
 const Button = ({ text, onClick }) => <button onClick={onClick}>{text}</button>
