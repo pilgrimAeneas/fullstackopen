@@ -38,24 +38,22 @@ const Statistics = ({ good, neutral, bad }) => {
         <p>No feedback given.</p>
       </>
     )
-  }
-  else {
+  } else {
     return (
       <>
         <h2>Statistics</h2>
-        <Display value={good} text="good" />
-        <Display value={neutral} text="neutral" />
-        <Display value={bad} text="bad" />
-        <Display value={all} text="all" />
-        <Display value={average} text="average" />
-        <Display value={positiveRatio + ' %'} text="positive" />
+        <StatisticsLine value={good} text="good" />
+        <StatisticsLine value={neutral} text="neutral" />
+        <StatisticsLine value={bad} text="bad" />
+        <StatisticsLine value={all} text="all" />
+        <StatisticsLine value={average} text="average" />
+        <StatisticsLine value={positiveRatio + ' %'} text="positive" />
       </>
     )
   }
-
 }
 
 const Button = ({ text, onClick }) => <button onClick={onClick}>{text}</button>
-const Display = ({ text, value }) => <div>{text} {value}</div>
+const StatisticsLine = ({ text, value }) => <div>{text} {value}</div>
 
 export default App
