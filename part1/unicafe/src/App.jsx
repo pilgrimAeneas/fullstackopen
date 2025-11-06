@@ -5,23 +5,28 @@ const App = () => {
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
 
-  const handleGoodReview = () => setGood(good + 1)
-  const handleNeutralReview = () => setNeutral(neutral + 1)
-  const handleBadReview = () => setBad(bad + 1)
-
+  const handleGood = () => setGood(good + 1)
+  const handleNeutral = () => setNeutral(neutral + 1)
+  const handleBad = () => setBad(bad + 1)
 
   return (
     <>
       <h1>Unicafe</h1>
+      <FeedbackInterface onGood={handleGood} onNeutral={handleNeutral} onBad={handleBad} />
+      <Statistics good={good} bad={bad} neutral={neutral} />
+    </>
+  )
+}
 
+const FeedbackInterface = ({ onGood, onNeutral, onBad }) => {
+  return (
+    <>
       <h2>Give Feedback</h2>
       <div>
-        <Button onClick={handleGoodReview} text="good" />
-        <Button onClick={handleNeutralReview} text="neutral" />
-        <Button onClick={handleBadReview} text="bad" />
+        <Button onClick={onGood} text="good" />
+        <Button onClick={onNeutral} text="neutral" />
+        <Button onClick={onBad} text="bad" />
       </div>
-
-      <Statistics good={good} bad={bad} neutral={neutral} />
     </>
   )
 }
@@ -42,18 +47,22 @@ const Statistics = ({ good, neutral, bad }) => {
     return (
       <>
         <h2>Statistics</h2>
-        <StatisticsLine value={good} text="good" />
-        <StatisticsLine value={neutral} text="neutral" />
-        <StatisticsLine value={bad} text="bad" />
-        <StatisticsLine value={all} text="all" />
-        <StatisticsLine value={average} text="average" />
-        <StatisticsLine value={positiveRatio + ' %'} text="positive" />
+        <table>
+          <tbody>
+            <StatisticsLine value={good} text="good" />
+            <StatisticsLine value={neutral} text="neutral" />
+            <StatisticsLine value={bad} text="bad" />
+            <StatisticsLine value={all} text="all" />
+            <StatisticsLine value={average} text="average" />
+            <StatisticsLine value={positiveRatio + ' %'} text="positive" />
+          </tbody>
+        </table>
       </>
     )
   }
 }
 
 const Button = ({ text, onClick }) => <button onClick={onClick}>{text}</button>
-const StatisticsLine = ({ text, value }) => <div>{text} {value}</div>
+const StatisticsLine = ({ text, value }) => <tr><td>{text}</td><td>{value}</td></tr>
 
 export default App
