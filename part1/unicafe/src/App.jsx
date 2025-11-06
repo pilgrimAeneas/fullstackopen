@@ -21,12 +21,12 @@ const App = () => {
         <Button onClick={handleBadReview} text="bad" />
       </div>
 
-      <StatisticsDisplay good={good} bad={bad} neutral={neutral} />
+      <Statistics good={good} bad={bad} neutral={neutral} />
     </>
   )
 }
 
-const StatisticsDisplay = ({ good, neutral, bad }) => {
+const Statistics = ({ good, neutral, bad }) => {
   const all = good + neutral + bad
   const points = (1 * good) + (0 * neutral) + (-1 * bad)
   const average = (points / all)
