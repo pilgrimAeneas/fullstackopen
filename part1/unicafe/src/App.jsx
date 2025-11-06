@@ -9,6 +9,7 @@ const App = () => {
   const handleNeutralReview = () => setNeutral(neutral + 1)
   const handleBadReview = () => setBad(bad + 1)
 
+
   return (
     <>
       <h1>Unicafe</h1>
@@ -20,10 +21,26 @@ const App = () => {
         <Button onClick={handleBadReview} text="bad" />
       </div>
 
+      <StatisticsDisplay good={good} bad={bad} neutral={neutral} />
+    </>
+  )
+}
+
+const StatisticsDisplay = ({ good, neutral, bad }) => {
+  const all = good + neutral + bad
+  const points = (1 * good) + (0 * neutral) + (-1 * bad)
+  const average = (points / all)
+  const positiveRatio = good / all
+
+  return (
+    <>
       <h2>Statistics</h2>
       <Display value={good} text="good" />
       <Display value={neutral} text="neutral" />
       <Display value={bad} text="bad" />
+      <Display value={all} text="all" />
+      <Display value={average} text="average" />
+      <Display value={positiveRatio + ' %'} text="positive" />
     </>
   )
 }
