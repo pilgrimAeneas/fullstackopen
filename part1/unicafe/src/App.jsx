@@ -33,7 +33,10 @@ const Statistics = ({ good, neutral, bad }) => {
   const positiveRatio = good / all
   if (all === 0) {
     return (
-      <p>No feedback given.</p>
+      <>
+        <h2>Statistics</h2>
+        <p>No feedback given.</p>
+      </>
     )
   }
   else {
