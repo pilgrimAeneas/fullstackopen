@@ -27,39 +27,39 @@ const App = () => {
 const Course = ({ course }) => {
   return (
     <>
-      <Header course={course} />
-      <Content course={course} />
-      <Total course={course} />
+      <Header name={course.name} />
+      <Content parts={course.parts} />
+      <Total parts={course.parts} />
     </>
   )
 }
 
-const Header = ({ course }) => {
+const Header = ({ name }) => {
   return (
-    <h1>{course.name}</h1>
+    <h2>{name}</h2>
   )
 }
 
-const Content = ({ course }) => {
+const Content = ({ parts }) => {
   return (
     <>
-      {course.parts.map(part => <Part key={part.id} part={part} />)}
+      {parts.map(part => <Part key={part.id} name={part.name} exercises={part.exercises} />)}
     </>
   )
 }
 
-const Part = ({ part: { name, exercises } }) => {
+const Part = ({ name, exercises }) => {
   return (
     <p>{name} {exercises}</p>
   )
 }
 
-const Total = ({ course: { parts } }) => {
+const Total = ({ parts }) => {
   return (
     <p>
-      Number of exercises {
-        parts.reduce((acc, part) => (acc + part.exercises), 0)
-      }
+      <strong>
+        total of {parts.reduce((acc, part) => (acc + part.exercises), 0)} exercises
+      </strong>
     </p>
   )
 }
