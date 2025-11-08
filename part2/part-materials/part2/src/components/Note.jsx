@@ -1,6 +1,6 @@
-const Note = ({ content }) => {
+const Note = ({ note }) => {
   return (
-    <li>{content}</li>
+    <li>{note.content}</li>
   )
 }
 
