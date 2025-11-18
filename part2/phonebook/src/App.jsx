@@ -1,10 +1,10 @@
 import { useState } from "react"
+import { useEffect } from "react"
 import axios from "axios"
 
 import Persons from "./components/Persons"
 import AdditionForm from "./components/AdditionForm"
 import Filter from "./components/Filter"
-import { useEffect } from "react"
 
 const App = () => {
   const [searchName, setSearchName] = useState("")
@@ -27,10 +27,15 @@ const App = () => {
       alert(`${newNumber} has already been added to phonebook.`)
     }
     else {
-      setPersons(persons.concat({ name: newName, number: newNumber }))
-      setNewName("")
-      setNewNumber("")
+      axios
+        .post("http://localhost:3001/persons", { name: newName, number: newNumber })
+        .then(response => {
+          setPersons(persons.concat(response.data))
+          setNewName("")
+          setNewNumber("")
+        })
     }
+
   }
 
   const peopleToShow = persons.filter(
