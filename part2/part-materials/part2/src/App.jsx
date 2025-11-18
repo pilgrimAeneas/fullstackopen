@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
-import axios from "axios"
 import Note from "./components/Note"
-
+import noteServices from "./services/notes"
 
 const App = () => {
 
@@ -10,10 +9,10 @@ const App = () => {
   const [showAll, setShowAll] = useState(true)
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3001/notes")
-      .then(({ data }) => {
-        setNotes(data)
+    noteServices
+      .getAll()
+      .then((initialNotes) => {
+        setNotes(initialNotes)
       })
   }, [])
 
@@ -23,14 +22,34 @@ const App = () => {
     const newNote = {
       content: currentNote,
       important: Math.random() < 0.5,
-      id: String(notes.length + 1),
     }
 
-    setNotes(notes.concat(newNote))
-    setCurrentNote("")
+    noteServices
+      .create(newNote)
+      .then(
+        (newNote) => {
+          setNotes(notes.concat(newNote))
+          setCurrentNote("")
+        }
+      )
   }
 
-  const handleToggelShowAll = () => setShowAll(!showAll)
+  const handleToggleImportance = id => {
+    const note = notes.find(note => note.id === id)
+    const updatedNote = { ...note, important: !note.important }
+
+    noteServices
+      .update(id, updatedNote)
+      .then(updatedNote => {
+        setNotes(notes.map(n => (n.id === id ? updatedNote : n)))
+      })
+      .catch(error => {
+        alert("This note is not on the server.")
+        setNotes(notes.filter(n => n.id !== id))
+      })
+  }
+
+  const handleToggleShowAll = () => setShowAll(!showAll)
 
   const notesToShow = (showAll)
     ? notes
@@ -40,12 +59,17 @@ const App = () => {
     <div>
       <h1>Notes</h1>
 
-      <button onClick={handleToggelShowAll}>
+      <button onClick={handleToggleShowAll}>
         show {showAll ? "important" : "all"}
       </button>
 
       <ul>
-        {notesToShow.map(note => <Note key={note.id} note={note} />)}
+        {notesToShow.map(note =>
+          <Note
+            key={note.id}
+            note={note}
+            toggleImportance={() => handleToggleImportance(note.id)}
+          />)}
       </ul>
 
       <form onSubmit={addNote}>

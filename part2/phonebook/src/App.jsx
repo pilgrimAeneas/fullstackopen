@@ -22,7 +22,19 @@ const App = () => {
   const addNewPerson = (e) => {
     e.preventDefault()
     if (persons.some(person => person.name === newName)) {
-      alert(`${newName} has already been added to phonebook.`)
+      if (confirm(`${newName} has already been added to phonebook, 
+        replace the old number with a new one?`)) {
+        const existingPerson = persons.find(p => p.name === newName)
+        const id = existingPerson.id
+        const newPerson = { ...existingPerson, number: newNumber }
+        personsServices
+          .update(id, newPerson)
+          .then(newPerson => {
+            setPersons(persons.map(p => p.id === id ? newPerson : p))
+            setNewName("")
+            setNewNumber("")
+          })
+      }
     } else if (persons.some(person => person.number === newNumber)) {
       alert(`${newNumber} has already been added to phonebook.`)
     }
