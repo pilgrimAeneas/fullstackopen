@@ -1,9 +1,12 @@
-const Persons = ({ list }) => (
+const Persons = ({ list, onDelete }) => (
   <>
-    {list.map(person => <Person key={person.name} person={person} />)}
+    {list.map(person => <Person key={person.name} person={person} onDelete={onDelete} />)}
   </>
 )
 
-const Person = ({ person }) => (<div> {person.name}: {person.number}</div>)
+const Person = ({ person, onDelete }) =>
+  <div>
+    {person.name}: {person.number} <button onClick={() => onDelete(person.id)}>Delete</button>
+  </div>
 
 export default Persons

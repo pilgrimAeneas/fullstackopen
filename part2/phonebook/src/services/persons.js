@@ -9,7 +9,7 @@ const getAll = () =>
 
 const create = (newPerson) =>
   axios
-    .post(newPerson)
+    .post(URL, newPerson)
     .then(response => response.data)
 
 const update = (id, newPerson) =>
@@ -17,4 +17,10 @@ const update = (id, newPerson) =>
     .put(`${URL}/${id}`, newPerson)
     .then(response => response.data)
 
-export default { getAll, create, update }
+const remove = id => {
+  axios
+    .delete(`${URL}/${id}`)
+    .then(response => response.data)
+}
+
+export default { create, getAll, update, remove }
