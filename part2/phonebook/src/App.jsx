@@ -5,13 +5,37 @@ import personsServices from "./services/persons"
 import Persons from "./components/Persons"
 import AdditionForm from "./components/AdditionForm"
 import Filter from "./components/Filter"
+import Notification from "./components/Notification"
+import "./index.css"
 
 const App = () => {
   const [searchName, setSearchName] = useState("")
 
   const [persons, setPersons] = useState([])
+
   const [newName, setNewName] = useState("")
   const [newNumber, setNewNumber] = useState("")
+
+  const resetNameNumber = () => {
+    setNewName("")
+    setNewNumber("")
+  }
+
+  const [notification, setNotification] = useState({ message: null, type: null })
+
+  const showNotification = (message, type) => {
+    const resetNotification = () => {
+      setNotification({ message: null, type: null })
+    }
+
+    setNotification({ message: message, type: type })
+    setTimeout(resetNotification, 5000)
+  }
+
+  const handleNotOnServerError = person => () => {
+    showNotification(`${person.name} is not on the server.`, false)
+    setPersons(persons.filter(p => p.id !== person.id))
+  }
 
   useEffect(() => {
     personsServices
@@ -31,9 +55,10 @@ const App = () => {
           .update(id, newPerson)
           .then(newPerson => {
             setPersons(persons.map(p => p.id === id ? newPerson : p))
-            setNewName("")
-            setNewNumber("")
+            resetNameNumber()
+            showNotification(`${newPerson.name} changed`, true)
           })
+          .catch(handleNotOnServerError(existingPerson))
       }
     } else if (persons.some(person => person.number === newNumber)) {
       alert(`${newNumber} has already been added to phonebook.`)
@@ -43,15 +68,21 @@ const App = () => {
         .create({ name: newName, number: newNumber })
         .then(newPerson => {
           setPersons(persons.concat(newPerson))
-          setNewName("")
-          setNewNumber("")
+          resetNameNumber()
+          showNotification(`${newPerson.name} added`, true)
         })
     }
   }
 
   const removePerson = id => {
-    if (confirm(`Delete ${persons.find(p => p.id === id).name}`)) {
-      personsServices.remove(id)
+    const person = persons.find(p => p.id === id)
+    if (confirm(`Delete ${person.name}`)) {
+      personsServices
+        .remove(id)
+        .then(person => {
+          showNotification(`${person.name} deleted`, true)
+        })
+        .catch(handleNotOnServerError(person))
       setPersons(persons.filter(p => p.id !== id))
     }
   }
@@ -63,6 +94,7 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
+      <Notification notification={notification} />
       <Filter searchName={searchName} onChange={e => setSearchName(e.target.value)} />
 
       <h3>add a new</h3>

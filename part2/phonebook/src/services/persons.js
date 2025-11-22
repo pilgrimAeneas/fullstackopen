@@ -17,10 +17,10 @@ const update = (id, newPerson) =>
     .put(`${URL}/${id}`, newPerson)
     .then(response => response.data)
 
-const remove = id => {
+const remove = id =>
   axios
     .delete(`${URL}/${id}`)
     .then(response => response.data)
-}
+
 
 export default { create, getAll, update, remove }
