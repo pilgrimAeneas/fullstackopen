@@ -46,8 +46,6 @@ function App() {
         />
       </form>
       <div>
-        {/* TODO: Turn the following to error component */}
-
         {
           countries.length > 10
             ? "Too many countries, be more specific."
