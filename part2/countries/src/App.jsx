@@ -17,7 +17,7 @@ function App() {
         .getAll()
         .then(data => {
           setCountries(data.filter(country =>
-            country.name.common.toLowerCase().startsWith(search.toLowerCase())))
+            country.name.common.toLowerCase().includes(search.toLowerCase())))
         })
     }, [search])
 
