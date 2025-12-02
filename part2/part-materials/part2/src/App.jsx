@@ -7,7 +7,7 @@ import Footer from "./components/Footer"
 
 const App = () => {
 
-  const [notes, setNotes] = useState([])
+  const [notes, setNotes] = useState(null)
   const [currentNote, setCurrentNote] = useState("")
   const [showAll, setShowAll] = useState(true)
   const [errorMessage, setErrorMessage] = useState(null)
@@ -32,7 +32,7 @@ const App = () => {
       .create(newNote)
       .then(
         (newNote) => {
-          setNotes(notes.concat(newNote).concat({ ...newNote, id: "823438dskjlf" }))
+          setNotes(notes.concat(newNote))
           setCurrentNote("")
         }
       )
