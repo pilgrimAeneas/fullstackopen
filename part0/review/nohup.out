@@ -1,0 +1,350 @@
+
+> review@0.0.0 dev
+> vite
+
+
+  VITE v7.3.0  ready in 176 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+12:54:49 PM [vite] (client) hmr update /src/App.jsx
+12:54:49 PM [vite] Internal server error: /home/aeneas/.repos/fullstackopen/part0/review/src/App.jsx: Missing semicolon. (8:5)
+
+  6 |   )
+  7 | }
+> 8 | nohup npm run dev &
+    |      ^
+  9 | export default App
+  Plugin: vite:react-babel
+  File: /home/aeneas/.repos/fullstackopen/part0/review/src/App.jsx:8:5
+  6  |    )
+  7  |  }
+  8  |  nohup npm run dev &
+     |       ^
+  9  |  export default App
+      at constructor (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.semicolon (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:6920:10)
+      at JSXParserMixin.parseExpressionStatement (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13361:10)
+      at JSXParserMixin.parseStatementContent (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12975:19)
+      at JSXParserMixin.parseStatementLike (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseModuleItem (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12820:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13392:36)
+      at JSXParserMixin.parseBlockBody (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseProgram (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12698:10)
+      at JSXParserMixin.parseTopLevel (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12688:25)
+      at JSXParserMixin.parse (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:14568:25)
+      at parse (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:14602:38)
+      at parser (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/parser/index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)
+      at normalizeFile.next (<anonymous>)
+      at run (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/transformation/index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:261:32)
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:273:13
+      at async.call.result.err.err (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:223:11)
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:189:28
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/gensync-utils/async.js:67:7
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:113:33
+      at step (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:287:14)
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:273:13
+      at async.call.result.err.err (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:223:11)
+12:54:52 PM [vite] (client) hmr update /src/App.jsx
+
+  VITE v7.3.0  ready in 175 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+1:11:09 PM [vite] (client) hmr update /src/App.jsx
+1:11:09 PM [vite] Internal server error: /home/aeneas/.repos/fullstackopen/part0/review/src/App.jsx: Missing semicolon. (1:4)
+
+> 1 | pp() {
+    |     ^
+  2 |   return (
+  3 |     <>
+  4 |       Hello, world!
+  Plugin: vite:react-babel
+  File: /home/aeneas/.repos/fullstackopen/part0/review/src/App.jsx:1:4
+  1  |  pp() {
+     |      ^
+  2  |    return (
+  3  |      <>
+      at constructor (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.semicolon (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:6920:10)
+      at JSXParserMixin.parseExpressionStatement (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13361:10)
+      at JSXParserMixin.parseStatementContent (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12975:19)
+      at JSXParserMixin.parseStatementLike (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseModuleItem (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12820:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13392:36)
+      at JSXParserMixin.parseBlockBody (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseProgram (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12698:10)
+      at JSXParserMixin.parseTopLevel (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12688:25)
+      at JSXParserMixin.parse (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:14568:25)
+      at parse (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:14602:38)
+      at parser (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/parser/index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)
+      at normalizeFile.next (<anonymous>)
+      at run (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/transformation/index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:261:32)
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:273:13
+      at async.call.result.err.err (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:223:11)
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:189:28
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/gensync-utils/async.js:67:7
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:113:33
+      at step (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:287:14)
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:273:13
+      at async.call.result.err.err (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:223:11)
+1:11:11 PM [vite] (client) hmr update /src/App.jsx
+1:11:11 PM [vite] Internal server error: /home/aeneas/.repos/fullstackopen/part0/review/src/App.jsx: Missing semicolon. (1:5)
+
+> 1 | App() {
+    |      ^
+  2 |   return (
+  3 |     <>
+  4 |       Hello, world!
+  Plugin: vite:react-babel
+  File: /home/aeneas/.repos/fullstackopen/part0/review/src/App.jsx:1:5
+  1  |  App() {
+     |       ^
+  2  |    return (
+  3  |      <>
+      at constructor (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.semicolon (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:6920:10)
+      at JSXParserMixin.parseExpressionStatement (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13361:10)
+      at JSXParserMixin.parseStatementContent (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12975:19)
+      at JSXParserMixin.parseStatementLike (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseModuleItem (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12820:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13392:36)
+      at JSXParserMixin.parseBlockBody (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseProgram (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12698:10)
+      at JSXParserMixin.parseTopLevel (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12688:25)
+      at JSXParserMixin.parse (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:14568:25)
+      at parse (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:14602:38)
+      at parser (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/parser/index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)
+      at normalizeFile.next (<anonymous>)
+      at run (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/transformation/index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:261:32)
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:273:13
+      at async.call.result.err.err (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:223:11)
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:189:28
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/gensync-utils/async.js:67:7
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:113:33
+      at step (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:287:14)
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:273:13
+      at async.call.result.err.err (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:223:11)
+1:11:15 PM [vite] (client) hmr update /src/App.jsx
+1:11:15 PM [vite] Internal server error: /home/aeneas/.repos/fullstackopen/part0/review/src/App.jsx: Unexpected token (1:7)
+
+> 1 | App = () {
+    |        ^
+  2 |   return (
+  3 |     <>
+  4 |       Hello, world!
+  Plugin: vite:react-babel
+  File: /home/aeneas/.repos/fullstackopen/part0/review/src/App.jsx:1:7
+  1  |  App = () {
+     |         ^
+  2  |    return (
+  3  |      <>
+      at constructor (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.unexpected (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:6644:16)
+      at JSXParserMixin.parseParenAndDistinguishExpression (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11764:12)
+      at JSXParserMixin.parseExprAtom (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10895:21)
+      at JSXParserMixin.parseMaybeAssign (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10924:25)
+      at JSXParserMixin.parseExpressionBase (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10848:23)
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10844:39
+      at JSXParserMixin.allowInAnd (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12495:16)
+      at JSXParserMixin.parseExpression (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10844:17)
+      at JSXParserMixin.parseStatementContent (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12971:23)
+      at JSXParserMixin.parseStatementLike (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseModuleItem (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12820:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13392:36)
+      at JSXParserMixin.parseBlockBody (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseProgram (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12698:10)
+      at JSXParserMixin.parseTopLevel (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12688:25)
+      at JSXParserMixin.parse (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:14568:25)
+      at parse (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:14602:38)
+      at parser (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/parser/index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)
+      at normalizeFile.next (<anonymous>)
+      at run (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/transformation/index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:261:32)
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:273:13
+      at async.call.result.err.err (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:223:11)
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:189:28
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/gensync-utils/async.js:67:7
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:113:33
+      at step (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:287:14)
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:273:13
+      at async.call.result.err.err (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:223:11)
+1:11:20 PM [vite] (client) hmr update /src/App.jsx
+1:11:23 PM [vite] (client) page reload src/App.jsx
+1:11:44 PM [vite] (client) hmr update /src/App.jsx
+1:11:44 PM [vite] Internal server error: /home/aeneas/.repos/fullstackopen/part0/review/src/App.jsx: Unexpected keyword 'return'. (3:2)
+
+  1 | const App = () => {
+  2 |   const 
+> 3 |   return (
+    |   ^
+  4 |     <>
+  5 |       Hello, world!
+  6 |     </>
+  Plugin: vite:react-babel
+  File: /home/aeneas/.repos/fullstackopen/part0/review/src/App.jsx:3:2
+  1  |  const App = () => {
+  2  |    const 
+  3  |    return (
+     |    ^
+  4  |      <>
+  5  |        Hello, world!
+      at constructor (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.checkReservedWord (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12298:12)
+      at JSXParserMixin.parseIdentifierName (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12285:12)
+      at JSXParserMixin.parseIdentifier (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12255:23)
+      at JSXParserMixin.parseBindingAtom (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:7383:17)
+      at JSXParserMixin.parseVarId (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13478:21)
+      at JSXParserMixin.parseVar (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13459:12)
+      at JSXParserMixin.parseVarStatement (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13306:10)
+      at JSXParserMixin.parseStatementContent (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12927:23)
+      at JSXParserMixin.parseStatementLike (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseStatementListItem (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12823:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13392:61)
+      at JSXParserMixin.parseBlockBody (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseBlock (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13373:10)
+      at JSXParserMixin.parseFunctionBody (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12174:24)
+      at JSXParserMixin.parseArrowExpression (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12149:10)
+      at JSXParserMixin.parseParenAndDistinguishExpression (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11759:12)
+      at JSXParserMixin.parseExprAtom (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10895:21)
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10864:39
+      at JSXParserMixin.allowInAnd (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12495:16)
+      at JSXParserMixin.parseMaybeAssignAllowIn (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10864:17)
+      at JSXParserMixin.parseVar (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13460:91)
+      at JSXParserMixin.parseVarStatement (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13306:10)
+      at JSXParserMixin.parseStatementContent (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12927:23)
+      at JSXParserMixin.parseStatementLike (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseModuleItem (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12820:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13392:36)
+      at JSXParserMixin.parseBlockBody (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseProgram (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12698:10)
+      at JSXParserMixin.parseTopLevel (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12688:25)
+      at JSXParserMixin.parse (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:14568:25)
+      at parse (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:14602:38)
+      at parser (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/parser/index.js:41:34)
+      at parser.next (<anonymous>)
+      at normalizeFile (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)
+      at normalizeFile.next (<anonymous>)
+      at run (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/transformation/index.js:22:50)
+      at run.next (<anonymous>)
+      at transform (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/core/lib/transform.js:22:33)
+      at transform.next (<anonymous>)
+      at step (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/gensync/index.js:261:32)
+1:11:52 PM [vite] (client) hmr update /src/App.jsx
+1:12:28 PM [vite] (client) hmr update /src/App.jsx
+1:12:30 PM [vite] (client) hmr update /src/App.jsx
+1:12:33 PM [vite] (client) hmr update /src/App.jsx
+1:12:36 PM [vite] (client) hmr update /src/App.jsx
+1:12:36 PM [vite] Internal server error: /home/aeneas/.repos/fullstackopen/part0/review/src/App.jsx: Unexpected token, expected "}" (6:6)
+
+  4 |     <>
+  5 |       {greet 
+> 6 |       Hello, world!
+    |       ^
+  7 |     </>
+  8 |   )
+  9 | }
+  Plugin: vite:react-babel
+  File: /home/aeneas/.repos/fullstackopen/part0/review/src/App.jsx:6:6
+  4  |      <>
+  5  |        {greet 
+  6  |        Hello, world!
+     |        ^
+  7  |      </>
+  8  |    )
+      at constructor (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.unexpected (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:6644:16)
+      at JSXParserMixin.expect (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:6924:12)
+      at JSXParserMixin.jsxParseExpressionContainer (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:4666:10)
+      at JSXParserMixin.jsxParseElementAt (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:4740:36)
+      at JSXParserMixin.jsxParseElement (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:4778:17)
+      at JSXParserMixin.parseExprAtom (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:4788:19)
+      at JSXParserMixin.parseExprSubscripts (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10895:21)
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10864:39
+      at JSXParserMixin.allowInAnd (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12500:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10864:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12567:17)
+      at JSXParserMixin.parseParenAndDistinguishExpression (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11747:28)
+      at JSXParserMixin.parseExprAtom (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10895:21)
+      at JSXParserMixin.parseExpressionBase (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10848:23)
+      at /home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10844:39
+      at JSXParserMixin.allowInAnd (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12495:16)
+      at JSXParserMixin.parseExpression (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10844:17)
+      at JSXParserMixin.parseReturnStatement (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13218:28)
+      at JSXParserMixin.parseStatementContent (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12874:21)
+      at JSXParserMixin.parseStatementLike (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseStatementListItem (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12823:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13392:61)
+      at JSXParserMixin.parseBlockBody (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseBlock (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:13373:10)
+      at JSXParserMixin.parseFunctionBody (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12174:24)
+      at JSXParserMixin.parseArrowExpression (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:12149:10)
+      at JSXParserMixin.parseParenAndDistinguishExpression (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11759:12)
+      at JSXParserMixin.parseExprAtom (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/home/aeneas/.repos/fullstackopen/part0/review/node_modules/@babel/parser/lib/index.js:10968:23)
+1:12:40 PM [vite] (client) hmr update /src/App.jsx
+1:12:42 PM [vite] (client) hmr update /src/App.jsx
