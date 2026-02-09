@@ -1,0 +1,31 @@
+### CREATE
+POST http://localhost:3001/api/notes
+content-type: application/json
+
+{
+    "content": "Postman was utter shit, cURL and REST Client in VSC were much better",
+    "important": true
+}
+
+###
+
+POST http://localhost:3001/api/notes
+content-type: application/json
+
+{
+    "content": ""
+}
+
+
+
+### READ all
+GET http://localhost:3001/api/notes
+### READ one
+GET http://localhost:3001/api/notes/1
+
+
+### UPDATE
+
+
+### DELETE
+DELETE http://localhost:3001/api/notes/4
