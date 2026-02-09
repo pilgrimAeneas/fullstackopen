@@ -45,6 +45,27 @@ app.get("/api/persons/:id", (req, res) => {
   }
 })
 
+const generateId = () => {
+  Math.floor(Math.random() * 100000000000)
+}
+
+app.post("/api/persons/", (req, res) => {
+  if (!req.body.name) {
+    return res.status(400).json({ error: "no name" })
+  } if (!req.body.number) {
+    return res.status(400).json({ error: "no number" })
+  }
+
+  const person = {
+    name: req.body.name,
+    number: req.body.number,
+    id: generateId()
+  }
+
+  book = book.concat(person)
+  res.json(person)
+})
+
 app.delete("/api/persons/:id", (req, res) => {
   book = book.filter(p => p.id !== req.params.id)
   res.status(204).end()
