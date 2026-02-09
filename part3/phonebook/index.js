@@ -1,5 +1,6 @@
 const express = require("express")
 const app = express()
+app.use(express.json())
 
 let book = [
   {
@@ -46,14 +47,27 @@ app.get("/api/persons/:id", (req, res) => {
 })
 
 const generateId = () => {
-  Math.floor(Math.random() * 100000000000)
+  return String(Math.floor(Math.random() * 100000000000))
 }
+
+const isDuplicate = name =>
+  book
+    .map(p => (p.name).toLowerCase())
+    .some(n => n === name.toLowerCase())
+
+const test1 = isDuplicate("Arto Hellas") === true
+const test2 = isDuplicate("kfdsjkla") === false
+const test3 = isDuplicate("") === false
+const test4 = isDuplicate("Ada lovelace") === true
+// console.log(test1, test2, test3, test4)
 
 app.post("/api/persons/", (req, res) => {
   if (!req.body.name) {
     return res.status(400).json({ error: "no name" })
   } if (!req.body.number) {
     return res.status(400).json({ error: "no number" })
+  } if (isDuplicate(req.body.name)) {
+    return res.status(400).json({ error: "name must be unique" })
   }
 
   const person = {

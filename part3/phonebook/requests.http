@@ -1,1 +1,49 @@
 DELETE http://localhost:3001/api/persons/2
+
+###
+
+POST http://localhost:3001/api/persons
+content-type: application/json
+
+{
+  "name": "Helloo1",
+  "number": 74981327489123
+}
+
+###
+
+POST http://localhost:3001/api/persons
+content-type: application/json
+
+{
+  "name": "Helloo2"
+}
+
+###
+
+POST http://localhost:3001/api/persons
+content-type: application/json
+
+{
+  "number": 74981327489123
+}
+
+###
+
+POST http://localhost:3001/api/persons
+content-type: application/json
+
+{
+  "name": "Helloo2",
+  "number": 74981327489123
+}
+
+###
+
+POST http://localhost:3001/api/persons
+content-type: application/json
+
+{
+  "name": "Helloo4",
+  "number": 74981327489123
+}
