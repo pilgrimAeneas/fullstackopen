@@ -40,10 +40,14 @@ content-type: application/json
 
 ###
 
-POST http://localhost:3001/api/persons
+POST https://phonebook-bj8c.onrender.com/api/persons
 content-type: application/json
 
 {
   "name": "Helloo4",
   "number": 74981327489123
 }
+
+###
+
+DELETE https://phonebook-bj8c.onrender.com/api/persons/2
