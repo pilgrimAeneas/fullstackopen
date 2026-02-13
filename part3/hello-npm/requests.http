@@ -22,10 +22,21 @@ content-type: application/json
 GET http://localhost:3001/api/notes
 ### READ one
 GET http://localhost:3001/api/notes/1
-
+###
+GET http://localhost:3001/ap/otes/1
 
 ### UPDATE
 
 
 ### DELETE
 DELETE http://localhost:3001/api/notes/4
+
+###
+
+POST http://localhost:3001/api/notessss
+content-type: application/json
+
+{
+    "content": "Postman was utter shit, cURL and REST Client in VSC were much better",
+    "important": true
+}
