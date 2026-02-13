@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "build:ui":"cd ../../part2/part-materials/part2/ && npm run build && cp -r dist/ ../../../part3/hello-npm/",
     "dev": "node --watch server.js",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
