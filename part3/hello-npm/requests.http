@@ -33,10 +33,12 @@ DELETE http://localhost:3001/api/notes/4
 
 ###
 
-POST http://localhost:3001/api/notessss
+POST http://localhost:3001/api/notes
 content-type: application/json
 
 {
     "content": "Postman was utter shit, cURL and REST Client in VSC were much better",
     "important": true
 }
+
+###
