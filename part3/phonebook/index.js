@@ -24,12 +24,6 @@ app.get("/info", (req, res) => {
 })
 
 app.get("/api/persons/:id", (req, res) => {
-  // const person = book.find(p => p.id === req.params.id)
-  // if (person) {
-  //   res.json(person)
-  // } else {
-  //   res.status(404).end()
-  // }
   Person.findById(req.params.id)
     .then(result => {
       res.json(result)
