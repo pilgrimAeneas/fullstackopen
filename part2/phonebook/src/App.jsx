@@ -71,6 +71,9 @@ const App = () => {
           resetNameNumber()
           showNotification(`${newPerson.name} added`, true)
         })
+        .catch(error => {
+          showNotification(`${error.response.data.error}`, false)
+        })
     }
   }
 
@@ -79,7 +82,7 @@ const App = () => {
     if (confirm(`Delete ${person.name}`)) {
       personsServices
         .remove(id)
-        .then(person => {
+        .then(result => {
           showNotification(`${person.name} deleted`, true)
         })
         .catch(handleNotOnServerError(person))

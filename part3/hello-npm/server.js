@@ -1,4 +1,4 @@
-require('dotenv').config()
+require("dotenv").config()
 const express = require("express")
 const app = express()
 const Note = require("./note")
@@ -7,43 +7,45 @@ const Note = require("./note")
 const errorHandler = (error, request, response, next) => {
   console.error(error.message)
 
-  if (error.name === 'CastError') {
-    return response.status(400).send({ error: 'malformatted id' })
+  if (error.name === "CastError") {
+    return response.status(400).send({ error: "malformatted id" })
+  }
+
+  if (error.name === "ValidationError") {
+    return response.status(400).send({ error: error.message })
   }
 
   next(error)
 }
 
 const requestLogger = (request, response, next) => {
-  console.log('Method:', request.method)
-  console.log('Path:  ', request.path)
-  console.log('Body:  ', request.body)
-  console.log('---')
+  console.log("Method:", request.method)
+  console.log("Path:  ", request.path)
+  console.log("Body:  ", request.body)
+  console.log("---")
   next()
 }
 
 const unknownEndpoint = (request, response) => {
-  response.status(404).send({ error: 'unknown endpoint' })
+  response.status(404).send({ error: "unknown endpoint" })
 }
 
 app.use(express.json())
 app.use(requestLogger)
-app.use(express.static('dist'))
+app.use(express.static("dist"))
 
 
-app.post("/api/notes", (request, response) => {
-  if (!request.body.content) {
-    return response.status(400).json({ error: 'content missing' })
-  }
-
+app.post("/api/notes", (request, response, next) => {
   const note = new Note({
     content: request.body.content,
     important: request.body.important || false,
   })
 
-  note.save().then(result => {
-    response.json(result)
-  })
+  note.save()
+    .then(result => {
+      response.json(result)
+    })
+    .catch(error => { next(error) })
 })
 
 app.get("/api/notes", (request, response) => {
@@ -52,7 +54,7 @@ app.get("/api/notes", (request, response) => {
   })
 })
 
-app.get('/api/notes/:id', (request, response, next) => {
+app.get("/api/notes/:id", (request, response, next) => {
   Note.findById(request.params.id)
     .then(result => {
       if (result) {
@@ -80,7 +82,7 @@ app.put("/api/notes/:id", (request, response, next) => {
     .catch(error => { next(error) })
 })
 
-app.delete('/api/notes/:id', (request, response, next) => {
+app.delete("/api/notes/:id", (request, response, next) => {
   Note.findByIdAndDelete(request.params.id)
     .then(result => { response.status(204).end() })
     .catch(error => { next(error) })
