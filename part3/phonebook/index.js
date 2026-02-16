@@ -59,8 +59,6 @@ app.post("/api/persons/", (req, res, next) => {
     return res.status(400).json({ error: "no name" })
   } if (!req.body.number) {
     return res.status(400).json({ error: "no number" })
-  } if (0) {
-    return res.status(400).json({ error: "name must be unique" })
   }
 
   const person = new Person({
@@ -73,7 +71,23 @@ app.post("/api/persons/", (req, res, next) => {
     .catch(error => { next(error) })
 })
 
-app.put("/api/persons/:id", (req, res) => { })
+app.put("/api/persons/:id", (req, res, next) => {
+  Person.findById(req.params.id)
+    .then(person => {
+      if (!person) {
+        return res.status(404).end()
+      }
+
+      const { name, number } = req.body
+      person.name = name
+      person.number = number
+
+      return person.save()
+        .then(updatedPerson => res.json(updatedPerson))
+        .catch(error => { next(error) })
+    })
+    .catch(error => { next(error) })
+})
 
 app.delete("/api/persons/:id", (req, res, next) => {
   Person.findByIdAndDelete(req.params.id)

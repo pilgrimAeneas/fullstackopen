@@ -53,3 +53,10 @@ content-type: application/json
 ###
 
 DELETE https://phonebook-bj8c.onrender.com/api/persons/2
+
+###
+
+PUT http://localhost:3001/api/persons/6990f4632cc8f1811835b5ae
+content-type: application/json
+
+{"name":"Arto Vihavainen","number":"045-1232456"}

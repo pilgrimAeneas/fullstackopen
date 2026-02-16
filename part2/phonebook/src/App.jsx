@@ -45,10 +45,10 @@ const App = () => {
 
   const addNewPerson = (e) => {
     e.preventDefault()
-    if (persons.some(person => person.name === newName)) {
+    if (persons.some(person => person.name.toLowerCase() === newName.toLowerCase())) {
       if (confirm(`${newName} has already been added to phonebook, 
         replace the old number with a new one?`)) {
-        const existingPerson = persons.find(p => p.name === newName)
+        const existingPerson = persons.find(p => p.name.toLowerCase() === newName.toLowerCase())
         const id = existingPerson.id
         const newPerson = { ...existingPerson, number: newNumber }
         personsServices
