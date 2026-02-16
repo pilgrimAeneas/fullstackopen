@@ -31,17 +31,6 @@ app.get("/api/persons/:id", (req, res) => {
     .catch(error => { res.status(404).end() })
 })
 
-// const isDuplicate = name =>
-//   book
-//     .map(p => (p.name).toLowerCase())
-//     .some(n => n === name.toLowerCase())
-
-// const test1 = isDuplicate("Arto Hellas") === true
-// const test2 = isDuplicate("kfdsjkla") === false
-// const test3 = isDuplicate("") === false
-// const test4 = isDuplicate("Ada lovelace") === true
-// console.log(test1, test2, test3, test4)
-
 app.post("/api/persons/", (req, res) => {
   if (!req.body.name) {
     return res.status(400).json({ error: "no name" })
@@ -60,7 +49,12 @@ app.post("/api/persons/", (req, res) => {
 })
 
 app.put("/api/persons/:id", (req, res) => { })
-app.delete("/api/persons/:id", (req, res) => { })
+
+app.delete("/api/persons/:id", (req, res) => {
+  Person.findByIdAndDelete(req.params.id)
+    .then(result => res.status(204).end())
+    .catch(error => console.log(error))
+})
 
 const PORT = process.env.PORT
 app.listen(PORT, () => console.log(`Listening on port ${PORT}.`))
