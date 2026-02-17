@@ -21,7 +21,7 @@ const personSchema = new mongoose.Schema({
   },
 })
 
-personSchema.set('toJSON', {
+personSchema.set("toJSON", {
   transform: (document, object) => {
     object.id = object._id.toString()
     delete object._id

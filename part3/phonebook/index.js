@@ -4,7 +4,7 @@ const app = express()
 const morgan = require("morgan")
 const Person = require("./person")
 
-morgan.token("body", function (req, res) { return JSON.stringify(req.body) })
+morgan.token("body", function (req) { return JSON.stringify(req.body) })
 
 const errorHandler = (error, req, res, next) => {
   console.log(error.message)
@@ -69,7 +69,7 @@ app.post("/api/persons/", (req, res, next) => {
   })
 
   person.save()
-    .then(result => { res.json(person) })
+    .then(() => { res.json(person) })
     .catch(error => { next(error) })
 })
 
@@ -93,7 +93,7 @@ app.put("/api/persons/:id", (req, res, next) => {
 
 app.delete("/api/persons/:id", (req, res, next) => {
   Person.findByIdAndDelete(req.params.id)
-    .then(result => res.status(204).end())
+    .then(() => res.status(204).end())
     .catch(error => { next(error) })
 })
 
