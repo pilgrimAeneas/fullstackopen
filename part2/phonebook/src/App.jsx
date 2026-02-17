@@ -82,7 +82,7 @@ const App = () => {
     if (confirm(`Delete ${person.name}`)) {
       personsServices
         .remove(id)
-        .then(result => {
+        .then(() => {
           showNotification(`${person.name} deleted`, true)
         })
         .catch(handleNotOnServerError(person))
