@@ -84,7 +84,7 @@ app.put("/api/notes/:id", (request, response, next) => {
 
 app.delete("/api/notes/:id", (request, response, next) => {
   Note.findByIdAndDelete(request.params.id)
-    .then(result => { response.status(204).end() })
+    .then(() => { response.status(204).end() })
     .catch(error => { next(error) })
 })
 

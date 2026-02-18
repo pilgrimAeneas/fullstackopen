@@ -1,10 +1,10 @@
 {
-  "name": "backend",
+  "name": "notes-back",
   "version": "0.0.1",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build:ui": "cd ../../part2/part-materials/part2/ && npm run build && cp -r dist/ ../../../part3/hello-npm/",
+    "build:ui": "cd ../notes-front/ && npm run build && cp -r dist/ ../notes-back/ && cd ../notes-back/",
     "dev": "node --watch server.js",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,5 +16,11 @@
     "express": "^5.2.1",
     "mongodb": "^7.1.0",
     "mongoose": "^9.2.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.8.0",
+    "eslint": "^10.0.0",
+    "globals": "^17.3.0"
   }
 }
