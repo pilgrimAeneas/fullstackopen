@@ -1,16 +1,5 @@
 const mongoose = require("mongoose")
 
-mongoose.set("strictQuery", false)
-const url = process.env.MONGODB_URI
-
-mongoose.connect(url, { family: 4 })
-  .then(result => {
-    console.log(result)
-  })
-  .catch(error => {
-    console.log(error)
-  })
-
 const noteSchema = new mongoose.Schema({
   content: {
     type: String,
